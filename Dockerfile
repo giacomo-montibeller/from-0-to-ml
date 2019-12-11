@@ -1,5 +1,6 @@
-FROM tensorflow/tensorflow:nightly-py3-jupyter
+FROM jupyter/base-notebook:python-3.7.3
 
-RUN pip3 install pandas seaborn
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
 WORKDIR /tf
